@@ -30,16 +30,15 @@ function getVDM($max_vdm, &$json = array(), $page = 0, $total_vdm = 0){
    for($i = 0; $i < sizeof($posts[0]); $i++){
       if($total_vdm >= $max_vdm | !isset($dates[0][$i])){ continue; }
       $id = [
-         'id' => $total_vdm,
-         'content' => $posts[0][$i],
-         'date' => substr(str_replace(" à","", $dates[0][$i]), 0, 16),
+         'id' => $total_vdm+1,
+         'content' => str_replace('\ ', '\\', str_replace('&quot;', '\"', $posts[0][$i])),
+         'date' => substr(str_replace("/", "-", str_replace(" à","", $dates[0][$i])), 0, 16),
          'author' => trim($authors[0][$i])
       ];
       $json[] = $id;
       $total_vdm++;
       echo ".";
    }
-
 
    if($total_vdm < $max_vdm){
       getVDM($max_vdm, $json, $page+1, $total_vdm);

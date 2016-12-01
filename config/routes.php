@@ -56,6 +56,13 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
+    $routes->connect('/api/posts/:id',
+       ['controller' => 'Api', 'action' => 'api'],
+       ['id' => '\d+', 'pass' => ['id']]
+    );
+
+
+
     /**
      * Connect catchall routes for all controllers.
      *
