@@ -34,6 +34,7 @@ Params : 
 
  Uses :  
  - vdm_app/api/posts 
+ - vdm_app/api/posts?from=29-11-2016
  - vdm_app/api/posts?from=29-11-2016&to=30-11-2016
  - vdm_app/api/posts?author=Genius
  - vdm_app/api/posts/<id>
