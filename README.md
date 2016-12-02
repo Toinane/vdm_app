@@ -27,19 +27,30 @@ To create the data.json, use this command :
 By default, the link access is
 > vdm_app/api/posts
 
-Params : 
-- from (optionnal) ­ Start date 
+Params :
+- from (optionnal) ­ Start date
 - to (optionnal) ­ End date
-- author (optionnal) ­ Author   
+- author (optionnal) ­ Author
 
- Uses :  
- - vdm_app/api/posts 
- - vdm_app/api/posts?from=29-11-2016
- - vdm_app/api/posts?from=29-11-2016&to=30-11-2016
- - vdm_app/api/posts?author=Genius
- - vdm_app/api/posts/{id}
+Uses :  
+- vdm_app/api/posts 
+- vdm_app/api/posts?from=29-11-2016
+- vdm_app/api/posts?from=29-11-2016&to=30-11-2016
+- vdm_app/api/posts?author=Genius
+- vdm_app/api/posts/{id}
 
- #### warning
- To use the API, you should first create the data.json before make your requests.
+#### warning
+To use the API, you should first create the data.json before make your requests.
+
+
+### Testing with PHPUnit
+To test the API, you have to use
+> vendor/bin/phpunit
+> vendor\\bin\\phpunit on windows
+
+The latest Units test :
+> Time: 251 ms, Memory: 12.00MB
+> OK (9 tests, 82 assertions)
+
 
  Have a great day :D

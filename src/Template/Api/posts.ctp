@@ -1,11 +1,10 @@
 <?php
+use Cake\Core\App;
 use Cake\Core\Configure;
 use Cake\Core\Plugin;
 use Cake\Network\Exception\NotFoundException;
 
-header('Content-Type: application/json');
-
-$file = './../plugins/VDM/data.json';
+$file = substr(App::path('')[0], 0, -5).'plugins\VDM\data.json';
 if(!$handle = fopen($file, "r")){
    echo '{"content": "Error data"}';
    exit;
